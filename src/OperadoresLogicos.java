@@ -1,4 +1,5 @@
 public class OperadoresLogicos {
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
     int idade = 16;
     boolean temCNH = true;
