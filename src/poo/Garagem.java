@@ -42,16 +42,44 @@ public class Garagem {
     carroDoPai.exibirInformacoes();
 
 
-    // executar o programa
-    // verificar se o carro está ligado ou desligado
-    // verificar a velocidade atual do carro
-    // verificar os dados do carro
-    // verificar se o carro está acelerando ou não
+    System.out.println("--------------------------");
+    System.out.println("Tentando mudar o ano do carro do pai:");
+    carroDoPai.setAno(2020);
+    System.out.println("Ano alterado para: " + carroDoPai.getAno());
 
-    // Exemplo de uso do método acelerar com velocidade negativa
-    Carro carroExemplo = new Carro("Toyota", "Corolla", 2021);
-    carroExemplo.ligar();
-    carroExemplo.acelerar(-10); // Tentativa de acelerar com velocidade negativa
-    carroExemplo.exibirInformacoes();
+    System.out.println("--------------------------");
+    System.out.println("Tentando mudar a cor do carro do vizinho:");
+    carroDoVizinho.setCor("Azul");
+    System.out.println("Cor alterada para: " + carroDoVizinho.getCor());
+    System.out.println("--------------------------");
+    System.out.println("Tentando mudar o modelo do carro do amigo:");
+    carroDoAmigo.setModelo("Polo");
+    System.out.println("Modelo alterado para: " + carroDoAmigo.getModelo());
+    System.out.println("--------------------------");
+    System.out.println("Tentando mudar a velocidade do meu carro:");
+    meuCarro.setVelocidadeAtual(60);
+    System.out.println("Velocidade alterada para: " + meuCarro.getVelocidadeAtual() + " km/h");
+    System.out.println("--------------------------");
+    System.out.println("Exibindo informações de todos os carros:");
+    meuCarro.exibirInformacoes();
+    carroDoVizinho.exibirInformacoes();
+    carroDoAmigo.exibirInformacoes();
+    carroDoPai.exibirInformacoes();
+    System.out.println("--------------------------");
+    System.out.println("Todos os carros foram exibidos com sucesso!");
+    System.out.println("--------------------------");
+    System.out.println("Fim do programa.");
+    System.out.println("--------------------------");
+    System.out.println("Minha Garagem de Carros");
+    System.out.println("--------------------------");
+    System.out.println("\n---- Carro de Corrida ----");
+    CarroDeCorrida carroDeCorrida = new CarroDeCorrida("Amarelo", "Formula 1", 2022, true);
+    carroDeCorrida.ligar();
+    carroDeCorrida.acelerar(100);
+    carroDeCorrida.ativarTurbo();
+    carroDeCorrida.exibirInformacoes();
+    carroDeCorrida.desligar();
+    carroDeCorrida.exibirInformacoes();
+    System.out.println("\n--- fim da Simulação da Garagem ---");
   }
 }

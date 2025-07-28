@@ -71,4 +71,46 @@ public class Carro {
         meuCarro.desligar();
         meuCarro.exibirInformacoes();
     }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public double getVelocidadeAtual() {
+        return velocidadeAtual;
+    }
+
+    public void setVelocidadeAtual(double velocidadeAtual) {
+        this.velocidadeAtual = velocidadeAtual;
+    }
+
+    public boolean isEstaLigado() {
+        return estaLigado;
+    }
+
+    public void setEstaLigado(boolean estaLigado) {
+        this.estaLigado = estaLigado;
+    }
+
+    
 }
