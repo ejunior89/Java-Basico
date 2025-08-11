@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Meu Blog Pessoal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .form-section h3 {
+            color: #495057;
+            margin-top: 0;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .post {
+            background-color: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .post p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .no-posts {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Meu Blog Pessoal</h1>
+
+        <div class="form-section">
+            <h3>✍️ Adicionar Novo Post</h3>
+            <form action="#" th:action="@{/create}" th:object="${post}" method="post">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" th:field="*{titulo}" placeholder="Digite o título do post" required />
+
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" th:field="*{conteudo}" placeholder="Digite o conteúdo do post" required></textarea>
+
+                <input type="submit" value="💾 Salvar Post" />
+            </form>
+        </div>
+
+        <hr style="border: none; border-top: 2px solid #eee; margin: 30px 0;">
+
+        <div th:if="${#lists.isEmpty(posts)}" class="no-posts">
+            <h3>📭 Nenhum post ainda</h3>
+            <p>Crie seu primeiro post usando o formulário acima!</p>
+        </div>
+
+        <div th:each="post : ${posts}" class="post">
+            <h2 th:text="${post.titulo}">Título do Post</h2>
+            <p th:text="${post.conteudo}">Conteúdo do Post</p>
+        </div>
+    </div>
+</body>
+</html>
