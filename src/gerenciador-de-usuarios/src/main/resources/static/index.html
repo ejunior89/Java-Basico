@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Usuários</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-$END$
+<div class="container">
+    <h1>Gerenciador de Usuários</h1>
+    <div class="form-section" id="login-form">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <p id="login-status"></p>
+
+    <div class="form-section" id="register-form">
+        <h2>Cadastrar Novo Usuário</h2>
+        <input type="text" id="register-username" placeholder="Usuário">
+        <input type="password" id="register-password" placeholder="Senha">
+        <select id="register-role">
+            <option value="USER">USER</option>
+            <option value="ADMIN">ADMIN</option>
+        </select>
+        <button onclick="register()">Cadastrar</button>
+        <p id="register-status"></p>
+    </div>
+
+    <div class="user-list-section" id="user-list-section" style="display: none;">
+        <h2>Lista de Usuários</h2>
+        <ul id="user-list"></ul>
+        <p><a href="#" onclick="logout()">Sair</a></p>
+    </div>
+</div>
+<script src="app.js"></script>
 </body>
 </html>
